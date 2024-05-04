@@ -1,3 +1,5 @@
+# Link to the problem: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
 class Solution:
     """
     Class representing a solution to the problem of removing duplicates from a sorted array.

@@ -1,3 +1,5 @@
+# Link to the problem: https://leetcode.com/problems/remove-element/
+
 class Solution:
     """
     Class representing a solution to the 'removeElement' problem.
