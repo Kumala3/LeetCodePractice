@@ -1,14 +1,16 @@
+# Link to the problem: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
+        if not nums:
+            return 0
+
         k = 1
         j = 1
 
         for i in range(1, len(nums)):
-        #  Pseudo code:
-        #  If current number is not equal to the previous number two times
-        #  that is each digit/number can appear only twice and then count all elements including repeated elements
-
-        # if current number equals to the previous number
+        
+        # If current number equals to the previous number
             if nums[i] == nums[i - 1]:
                 k += 1
             else:
