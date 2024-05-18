@@ -10,23 +10,32 @@ class RecFuncs:
     def gs1(self, n: int):
         if n == 1:
             return 1
-        if n == 2:
+        elif n == 2:
             return 2
         return self.gs1(n - 2) + self.gs1(n - 1) + 2
 
     def gs2(self, n: int):
         if n == 1:
             return 1.5
-        if n == 2:
+        elif n == 2:
             return 1
         return self.gs2(n - 2) + self.gs2(n - 1) - 2
 
     def gs3(self, n: int):
         if n == 1:
             return -3
-        if n == 2:
+        elif n == 2:
             return 1
         return self.gs3(n - 2) * self.gs3(n - 1) - 1
+
+    def gs4(self, n: int):
+        if n == 1:
+            return -2
+        elif n == 2:
+            return 2.5
+        elif n == 3:
+            return 3
+        return self.gs4(n - 3) - self.gs4(n - 1)
 
     # Recursive approach to solve factorial algorithm
     @profile
@@ -57,4 +66,4 @@ if __name__ == "__main__":
 
     # it_factorial_exec_time = timeit(lambda: rec_func.it_factorial(number), number=1)
     # print(f"Execution time of iterative factorial: {it_factorial_exec_time}")
-    print(rec_func.gs3(number))
+    print(rec_func.gs4(number))
