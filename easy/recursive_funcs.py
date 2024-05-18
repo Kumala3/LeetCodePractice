@@ -24,8 +24,15 @@ class RecFuncs:
             return 1
         return self.gs3(n - 2) * self.gs3(n - 1) + 2
 
+    # Recursive approach to solve factorial algorithm
+    def factorial(self, n: int):
+        if n == 0:
+            return 1
+        return n * self.factorial(n - 1)
+
 
 number = int(input("Enter a number please:   "))
 rec_func = RecFuncs()
 
 print(rec_func.gs2(number))
+print(rec_func.factorial(number))
