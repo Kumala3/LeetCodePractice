@@ -1,3 +1,6 @@
+from memory_profiler import profile
+
+
 # Ex. 12.2
 class RecFuncs:
     def __init__(self):
@@ -25,14 +28,29 @@ class RecFuncs:
         return self.gs3(n - 2) * self.gs3(n - 1) + 2
 
     # Recursive approach to solve factorial algorithm
-    def factorial(self, n: int):
+    @profile
+    def rc_factorial(self, n: int):
         if n == 0:
             return 1
-        return n * self.factorial(n - 1)
+        return n * self.rc_factorial(n - 1)
+
+    # Iterative approach to solve factorial algorithm
+    @profile
+    def it_factorial(self, n: int):
+        result = 1
+        if n > 0:
+            for i in range(1, n + 1):
+                # if i == 0:
+                #     break
+                result = result * i
+
+        return result
 
 
-number = int(input("Enter a number please:   "))
-rec_func = RecFuncs()
+if __name__ == "__main__":
+    number = int(input("Enter a number please:   "))
+    rec_func = RecFuncs()
 
-print(rec_func.gs2(number))
-print(rec_func.factorial(number))
+    # print(rec_func.gs2(number))
+    print(rec_func.rc_factorial(number))
+    print(rec_func.it_factorial(number))
