@@ -1,4 +1,5 @@
 from memory_profiler import profile
+from timeit import timeit
 
 
 # Ex. 12.2
@@ -51,6 +52,8 @@ if __name__ == "__main__":
     number = int(input("Enter a number please:   "))
     rec_func = RecFuncs()
 
-    # print(rec_func.gs2(number))
-    print(rec_func.rc_factorial(number))
-    print(rec_func.it_factorial(number))
+    rc_factorial_exec_time = timeit(lambda: rec_func.rc_factorial(number), number=1)
+    print(f"Execution time of recursive factorial: {rc_factorial_exec_time}")
+
+    it_factorial_exec_time = timeit(lambda: rec_func.it_factorial(number), number=1)
+    print(f"Execution time of iterative factorial: {it_factorial_exec_time}")
