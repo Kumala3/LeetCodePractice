@@ -54,13 +54,19 @@ class RecFuncs:
         #     return digit_1 + digit_2
 
     def gs6(self, n: int):
+        # Determine when algorithm should stop
         if n == 1:
             return 0
         elif n == 2:
             return 1
         elif n == 3:
             return -1
-        return self.gs6(n - 1) + self.gs6(n - 2) + -self.gs6(n - 3)
+
+        # If n is even, then digit_2 + 1, else digit_2 - 1
+        if n % 2 == 0:
+            return self.gs6(n - 2) + 1
+        else:
+            return self.gs6(n - 2) - 1
 
     # Recursive approach to solve factorial algorithm
     @profile
