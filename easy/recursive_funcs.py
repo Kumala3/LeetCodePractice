@@ -53,6 +53,15 @@ class RecFuncs:
         # else:
         #     return digit_1 + digit_2
 
+    def gs6(self, n: int):
+        if n == 1:
+            return 0
+        elif n == 2:
+            return 1
+        elif n == 3:
+            return -1
+        return self.gs6(n - 1) + self.gs6(n - 2) + -self.gs6(n - 3)
+
     # Recursive approach to solve factorial algorithm
     @profile
     def rc_factorial(self, n: int):
@@ -82,4 +91,4 @@ if __name__ == "__main__":
 
     # it_factorial_exec_time = timeit(lambda: rec_func.it_factorial(number), number=1)
     # print(f"Execution time of iterative factorial: {it_factorial_exec_time}")
-    print(rec_func.gs5(number))
+    print(rec_func.gs6(number))
