@@ -26,7 +26,7 @@ class RecFuncs:
             return -3
         elif n == 2:
             return 1
-        return self.gs3(n - 2) * self.gs3(n - 1) - 1
+        return self.gs3(n - 1) * self.gs3(n - 2) - 1
 
     def gs4(self, n: int):
         if n == 1:
@@ -54,7 +54,7 @@ class RecFuncs:
         #     return digit_1 + digit_2
 
     def gs6(self, n: int):
-        # Determine when algorithm should stop
+        # Determine when the algorithm should stop
         if n == 1:
             return 0
         elif n == 2:
@@ -97,4 +97,4 @@ if __name__ == "__main__":
 
     # it_factorial_exec_time = timeit(lambda: rec_func.it_factorial(number), number=1)
     # print(f"Execution time of iterative factorial: {it_factorial_exec_time}")
-    print(rec_func.gs6(number))
+    print(rec_func.gs3(number))
